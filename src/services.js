@@ -107,7 +107,7 @@ export const getCovidData = async () => {
   //    `,
   // );
 
-  return `============== COVID 19 ==============
+  const string = `============== COVID 19 ==============
           Quốc gia: ${country}
           Khu vực: ${continent}
           Dân số: ${population}
@@ -122,4 +122,6 @@ export const getCovidData = async () => {
     .locale("vi")
     .format("HH:mm:ss, DD/MM/YYYY")}
           `;
+
+  return "```" + string + "```";
 };
