@@ -42,7 +42,8 @@ client.on("ready", () => {
     "*/3 * * *",
     // rule,
     async () => {
-      channel.send(`Thông báo theo lịch trình: ${new Date()}`);
+      channel.send(`Thông báo theo lịch trình: ${moment()
+        .locale("vi").format("HH:mm:ss")}`);
       channel.send(await getCovidData());
     });
 
