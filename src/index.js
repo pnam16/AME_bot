@@ -4,7 +4,6 @@ import schedule from "node-schedule";
 import moment from "moment-timezone";
 
 import {getCovidData, processCommand} from "./services.js";
-import {token} from "../secrets.js"
 
 // set timezone
 moment.tz.setDefault("Asia/Ho_Chi_Minh");
