@@ -11,8 +11,6 @@ moment.tz.setDefault("Asia/Ho_Chi_Minh");
 
 const client = new Client();
 
-
-
 //Check kết nối discord
 client.on("ready", () => {
   client.user.setActivity("DISCORD", {type: "STREAMING"});
@@ -40,8 +38,8 @@ client.on("ready", () => {
   rule.second = 0;
 
   schedule.scheduleJob(
-    // "*/6 * * *",
-    rule,
+    "*/30 * * * * *",
+    // rule,
     async () => {
       channel.send(await getCovidData());
     });
