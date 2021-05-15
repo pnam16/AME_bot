@@ -79,46 +79,18 @@ export const getCovidData = async () => {
     // countryInfo,
   } = data;
 
-  // console.log(
-  //   `Quốc gia: ${country}
-  //   Khu vực: ${continent}
-  //   Dân số: ${population}
-  //   Số ca nhiễm: ${cases}
-  //   Số ca nhiễm trong ngày hôm nay: ${todayCases}
-  //   Số ca tử vong: ${deaths}
-  //   Số ca tử vong ngày hôm nay: ${todayDeaths}
-  //   Số ca đã phục hồi: ${recovered}
-  //   Số ca đã phục hồi trong ngày hôm nay: ${todayRecovered}
-  //   Số ca chưa xác định: ${undefined}
-  //   Dữ liệu được cập nhật lúc: ${updated}
-  //   // Ngay hom nay co: ${tests} // chắc là số liều vacin
-  //   // Ngay hom nay co: ${active}
-  //   // Ngay hom nay co: ${critical}
-  //   // Ngay hom nay co: ${casesPerOneMillion}
-  //   // Ngay hom nay co: ${deathsPerOneMillion}
-  //   // Ngay hom nay co: ${testsPerOneMillion}
-  //   // Ngay hom nay co: ${oneCasePerPeople}
-  //   // Ngay hom nay co: ${oneDeathPerPeople}
-  //   // Ngay hom nay co: ${oneTestPerPeople}
-  //   // Ngay hom nay co: ${activePerOneMillion}
-  //   // Ngay hom nay co: ${recoveredPerOneMillion}
-  //   // Ngay hom nay co: ${criticalPerOneMillion}
-  //   // Ngay hom nay co: ${countryInfo}
-  //    `,
-  // );
-
   const string = `============== COVID 19 ==============
-          Quốc gia: ${country}
-          Khu vực: ${continent}
-          Dân số: ${population}
-          Số ca nhiễm: ${cases}
-          Số ca nhiễm trong ngày hôm nay: ${todayCases}
-          Số ca tử vong: ${deaths}
-          Số ca tử vong ngày hôm nay: ${todayDeaths}
-          Số ca đã phục hồi: ${recovered}
-          Số ca đã phục hồi trong ngày hôm nay: ${todayRecovered}
-          Số ca chưa xác định: ${undefine}
-          Dữ liệu được cập nhật lúc: ${moment(updated)
+    Quốc gia: ${country}
+    Khu vực: ${continent}
+    Dân số: ${population}
+    Số ca nhiễm: ${cases}
+    Số ca nhiễm trong ngày hôm nay: ${todayCases}
+    Số ca tử vong: ${deaths}
+    Số ca tử vong ngày hôm nay: ${todayDeaths}
+    Số ca đã phục hồi: ${recovered}
+    Số ca đã phục hồi trong ngày hôm nay: ${todayRecovered}
+    Số ca chưa xác định: ${undefine}
+    Dữ liệu được cập nhật lúc: ${moment(updated)
     .locale("vi")
     .format("HH:mm:ss, DD/MM/YYYY")}
           `;
