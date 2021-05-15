@@ -4,6 +4,7 @@ import schedule from "node-schedule";
 import moment from "moment-timezone";
 
 import {getCovidData, processCommand} from "./services.js";
+import {token} from "../secrets.js";
 
 // set timezone
 moment.tz.setDefault("Asia/Ho_Chi_Minh");
@@ -12,7 +13,7 @@ const client = new Client();
 
 //Check kết nối discord
 client.on("ready", () => {
-  client.user.setActivity("DISCORD", {type: "STREAMING"});
+  client.user.setActivity("4`");
 
   console.log("ready");
   // Vòng FOR duyệt guilds và các channels
@@ -57,10 +58,11 @@ client.on("message", async(message) => {
 
   message.react("✅");
   message.react("😜");
+  message.react("🙄");
 
   if (message.content.substr(0, 5) === "hit::") {
     processCommand(message);
   }
 });
 
-client.login(process.env.DIS_Token);
+client.login(token || process.env.DIS_Token);

@@ -43,6 +43,7 @@ export const processCommand = (receivedMessage) => {
 
 const Covid = async (receivedMessage) => {
   const data = await getCovidData();
+  receivedMessage.reply("");
   receivedMessage.channel.send(data);
 };
 
