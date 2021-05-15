@@ -31,6 +31,7 @@ client.on("ready", () => {
   // channel.send(attach);
 
   // */6 * * *          // 6h
+  // */5 * * * *        // 5min
   // "*/3 * * * * *"    // 3s
 
   const rule = new schedule.RecurrenceRule();
@@ -39,7 +40,7 @@ client.on("ready", () => {
   rule.second = 0;
 
   schedule.scheduleJob(
-    "*/3 * * *",
+    "*/3 * * * *",
     // rule,
     async () => {
       channel.send(`Thông báo theo lịch trình: ${moment()
