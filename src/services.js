@@ -120,6 +120,6 @@ export const getCovidData = async () => {
           Số ca chưa xác định: ${undefine}
           Dữ liệu được cập nhật lúc: ${moment(updated)
     .locale("vi")
-    .format("h:mm:ss, DD/MM/YYYY")}
+    .format("HH:mm:ss, DD/MM/YYYY")}
           `;
 };
