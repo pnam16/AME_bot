@@ -40,7 +40,7 @@ client.on("ready", () => {
   rule.second = 0;
 
   schedule.scheduleJob(
-    "*/3 * * * *",
+    "*/15 * * * *",
     // rule,
     async () => {
       channel.send(`Thông báo theo lịch trình: ${moment()
