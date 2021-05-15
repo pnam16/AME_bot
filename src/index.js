@@ -42,7 +42,7 @@ client.on("ready", () => {
     "*/3 * * *",
     // rule,
     async () => {
-      channel.send("Thông báo theo lịch trình");
+      channel.send(`Thông báo theo lịch trình: ${new Date()}`);
       channel.send(await getCovidData());
     });
 
