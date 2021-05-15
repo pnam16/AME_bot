@@ -38,7 +38,7 @@ client.on("ready", () => {
   rule.second = 0;
 
   schedule.scheduleJob(
-    "*/30 * * * * *",
+    "*/1 * * *",
     // rule,
     async () => {
       channel.send(await getCovidData());
