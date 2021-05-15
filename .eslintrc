@@ -19,7 +19,7 @@
     "ecmaVersion": 2018
   },
   "plugins": [
-    "mocha",
+    "mocha"
   ],
   "rules": {
     "semi": [
@@ -83,14 +83,14 @@
     "array-bracket-spacing": [
       "error",
       "never"
-    ],
+    ]
   },
   "settings": {
     "react": {
       "createClass": "createReactClass",
       "pragma": "React",
       "version": "detect",
-      "flowVersion": "0.53",
+      "flowVersion": "0.53"
     },
     "propWrapperFunctions": [
       "forbidExtraProps",

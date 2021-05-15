@@ -15,6 +15,7 @@ const client = new Client();
 client.on("ready", () => {
   client.user.setActivity("DISCORD", {type: "STREAMING"});
 
+  console.log("ready");
   // Vòng FOR duyệt guilds và các channels
   // client.guilds.cache.forEach((guild) => {
   //   console.log(guild.name);
@@ -61,8 +62,6 @@ client.on("message", async(message) => {
   if (message.content.substr(0, 5) === "hit::") {
     processCommand(message);
   }
-  // message.channel.send(await Covid());
-
 });
 
 client.login(token);
