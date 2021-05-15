@@ -30,7 +30,7 @@ client.on("ready", () => {
   // channel.send("hihi");
   // channel.send(attach);
 
-  // */6 * * *          // 6h
+  // 0 */3 * * *          // 3h
   // */5 * * * *        // 5min
   // "*/3 * * * * *"    // 3s
 
@@ -40,7 +40,7 @@ client.on("ready", () => {
   rule.second = 0;
 
   schedule.scheduleJob(
-    "*/3 * * *",
+    "0 */3 * * *",
     // rule,
     async () => {
       channel.send(`Thông báo theo lịch trình: ${moment()
