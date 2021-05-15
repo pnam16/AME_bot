@@ -39,9 +39,10 @@ client.on("ready", () => {
   rule.second = 0;
 
   schedule.scheduleJob(
-    "*/1 * * *",
+    "*/3 * * *",
     // rule,
     async () => {
+      channel.send("Thông báo theo lịch trình");
       channel.send(await getCovidData());
     });
 
