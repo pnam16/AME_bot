@@ -1,8 +1,9 @@
 import axios from "axios";
 import moment from "moment-timezone";
 
-import {MessageAttachment} from "discord.js";
 import {readdirSync} from "fs";
+import {Client, MessageAttachment} from "discord.js";
+const client = new Client();
 
 export const ShowImage = (receivedMessage) => {
   const img = readdirSync("image/"); // Lấy tất cả ảnh thành một list trong folder Image/Anime
@@ -44,7 +45,9 @@ export const processCommand = (receivedMessage) => {
 const Covid = async (receivedMessage) => {
   const data = await getCovidData();
   receivedMessage.reply("");
-  receivedMessage.channel.send(data);
+
+  const channel = client.channels.cache.get("841682021218254858");
+  channel.send(data);
 };
 
 const covidUrl = "https://corona.lmao.ninja/v2/countries/vn";

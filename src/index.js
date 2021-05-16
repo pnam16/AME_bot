@@ -1,8 +1,7 @@
-import {Client} from "discord.js";
-
 import schedule from "node-schedule";
 import moment from "moment-timezone";
 
+import {Client} from "discord.js";
 import {getCovidData, processCommand} from "./services.js";
 // import {token} from "../secrets.js";
 
@@ -43,7 +42,7 @@ client.on("ready", () => {
     "0 */3 * * *",
     // rule,
     async () => {
-      channel.send(`Thông báo theo lịch trình: ${moment()
+      channel.send(`Bây giờ là: ${moment()
         .locale("vi").format("HH:mm:ss")}`);
       channel.send(await getCovidData());
     });
