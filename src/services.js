@@ -80,17 +80,17 @@ export const getCovidData = async () => {
   } = data;
 
   const string = `============== COVID 19 ==============
-    Quốc gia: ${country}
-    Khu vực: ${continent}
-    Dân số: ${population}
-    Số ca nhiễm: ${cases}
-    Số ca nhiễm trong ngày hôm nay: ${todayCases}
-    Số ca tử vong: ${deaths}
-    Số ca tử vong ngày hôm nay: ${todayDeaths}
-    Số ca đã phục hồi: ${recovered}
-    Số ca đã phục hồi trong ngày hôm nay: ${todayRecovered}
-    Số ca chưa xác định: ${undefine}
-    Dữ liệu được cập nhật lúc: ${moment(updated)
+  Quốc gia: ${country}
+  Khu vực: ${continent}
+  Dân số: ${population}
+  Số ca nhiễm: ${cases}
+  Số ca nhiễm trong ngày hôm nay: ${todayCases}
+  Số ca tử vong: ${deaths}
+  Số ca tử vong ngày hôm nay: ${todayDeaths}
+  Số ca đã phục hồi: ${recovered}
+  Số ca đã phục hồi trong ngày hôm nay: ${todayRecovered}
+  Số ca chưa xác định: ${undefine}
+  Dữ liệu được cập nhật lúc: ${moment(updated)
     .locale("vi")
     .format("HH:mm:ss, DD/MM/YYYY")}`;
 
