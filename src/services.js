@@ -82,8 +82,7 @@ export const getCovidData = async () => {
     // countryInfo,
   } = data;
 
-  const string = `============== COVID 19 ==============\n
-  Quốc gia: ${country}
+  const string = `============== COVID 19 ==============\nQuốc gia: ${country}
   Khu vực: ${continent}
   Dân số: ${population}
   Số ca nhiễm: ${cases}
