@@ -2,7 +2,7 @@ import schedule from "node-schedule";
 import moment from "moment-timezone";
 
 import {Client} from "discord.js";
-import {getCovidData, processCommand} from "./services.js";
+import {getCovidEmbeded, getCovidData, processCommand} from "./services.js";
 // import {token} from "../secrets.js";
 
 // set timezone
@@ -39,12 +39,14 @@ client.on("ready", () => {
   // "*/3 * * * * *"    // 3s
 
   schedule.scheduleJob(
-    // "0 */3 * * *",
+    // "*/3 * * * * *",
     rule,
     async () => {
       channel.send(`Bây giờ là: ${moment()
         .locale("vi").format("HH:mm:ss")}`);
-      channel.send(await getCovidData());
+
+      const data = await getCovidData();
+      channel.send(getCovidEmbeded(data));
     });
 
   // job;

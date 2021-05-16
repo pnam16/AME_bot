@@ -41,19 +41,19 @@ export const processCommand = (receivedMessage) => {
   }
 };
 
+export const getCovidEmbeded = (data) => new MessageEmbed()
+  .setColor("#0099ff")
+  .setTitle("Covid 19")
+  .setURL("https://www.facebook.com/namnam2k")
+  .setAuthor("@pnam")
+  .addFields(data)
+  .setImage("https://disease.sh/assets/img/flags/vn.png");
+
 const Covid = async (receivedMessage) => {
   const data = await getCovidData();
 
   receivedMessage.reply("");
-  const exampleEmbed = new MessageEmbed()
-    .setColor("#0099ff")
-    .setTitle("Covid 19")
-    .setURL("https://www.facebook.com/namnam2k")
-    .setAuthor("@pnam")
-    .addFields(data)
-    .setImage("https://disease.sh/assets/img/flags/vn.png");
-
-  receivedMessage.channel.send(exampleEmbed);
+  receivedMessage.channel.send(getCovidEmbeded(data));
 };
 
 const covidUrl = "https://corona.lmao.ninja/v2/countries/vn";
