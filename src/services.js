@@ -80,8 +80,7 @@ export const getCovidData = async () => {
   } = data;
 
   const arr = [
-    "```=================== COVID 19 ===================",
-    "\n",
+    "```=================== COVID 19 ===================\n",
     `Quốc gia: ${country}`,
     `Khu vực: ${continent}`,
     `Dân số: ${population}`,
