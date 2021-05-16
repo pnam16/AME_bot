@@ -3,7 +3,7 @@ import moment from "moment-timezone";
 
 import {Client} from "discord.js";
 import {getCovidData, processCommand} from "./services.js";
-// import {token} from "../secrets.js";
+import {token} from "../secrets.js";
 
 // set timezone
 moment.tz.setDefault("Asia/Ho_Chi_Minh");
@@ -67,5 +67,5 @@ client.on("message", async(message) => {
   }
 });
 
-client.login(process.env.DIS_Token);
-// client.login(token);
+// client.login(process.env.DIS_Token);
+client.login(token);
