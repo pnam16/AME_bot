@@ -29,18 +29,17 @@ client.on("ready", () => {
   // channel.send("hihi");
   // channel.send(attach);
 
-  // const rule = new schedule.RecurrenceRule();
-
-  // rule.hour = [5, 11, 17];
-  // rule.second = 0;
+  const rule = new schedule.RecurrenceRule();
+  rule.hour = [5, 11, 14, 17, 20, 23];
+  rule.second = 0;
 
   // 0 */3 * * *          // 3h
   // */5 * * * *        // 5min
   // "*/3 * * * * *"    // 3s
 
   schedule.scheduleJob(
-    "0 */3 * * *",
-    // rule,
+    // "0 */3 * * *",
+    rule,
     async () => {
       channel.send(`Bây giờ là: ${moment()
         .locale("vi").format("HH:mm:ss")}`);
