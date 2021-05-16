@@ -30,7 +30,8 @@ client.on("ready", () => {
   // channel.send(attach);
 
   const rule = new schedule.RecurrenceRule();
-  rule.hour = [5, 11, 14, 17, 20, 23];
+  rule.hour = [5, 8, 11, 14, 17, 20, 23];
+  rule.minute = 0;
   rule.second = 0;
 
   // 0 */3 * * *          // 3h
