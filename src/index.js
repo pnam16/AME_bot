@@ -3,7 +3,7 @@ import moment from "moment-timezone";
 
 import {Client} from "discord.js";
 import {getCovidData, processCommand} from "./services.js";
-// import {token} from "../secrets.js";
+import {token} from "../secrets.js";
 
 // set timezone
 moment.tz.setDefault("Asia/Ho_Chi_Minh");
@@ -29,14 +29,14 @@ client.on("ready", () => {
   // channel.send("hihi");
   // channel.send(attach);
 
+  // const rule = new schedule.RecurrenceRule();
+
+  // rule.hour = [5, 11, 17];
+  // rule.second = 0;
+
   // 0 */3 * * *          // 3h
   // */5 * * * *        // 5min
   // "*/3 * * * * *"    // 3s
-
-  const rule = new schedule.RecurrenceRule();
-
-  rule.hour = [5, 11, 17];
-  rule.second = 0;
 
   schedule.scheduleJob(
     "0 */3 * * *",
@@ -67,5 +67,5 @@ client.on("message", async(message) => {
   }
 });
 
-client.login(process.env.DIS_Token);
-// client.login(token);
+// client.login(process.env.DIS_Token);
+client.login(token);

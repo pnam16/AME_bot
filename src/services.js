@@ -2,8 +2,7 @@ import axios from "axios";
 import moment from "moment-timezone";
 
 import {readdirSync} from "fs";
-import {Client, MessageAttachment} from "discord.js";
-const client = new Client();
+import {MessageAttachment} from "discord.js";
 
 export const ShowImage = (receivedMessage) => {
   const img = readdirSync("image/"); // Lấy tất cả ảnh thành một list trong folder Image/Anime
@@ -45,9 +44,7 @@ export const processCommand = (receivedMessage) => {
 const Covid = async (receivedMessage) => {
   const data = await getCovidData();
   receivedMessage.reply("");
-
-  const channel = client.channels.cache.get("841682021218254858");
-  channel.send(data);
+  receivedMessage.channel.send(data);
 };
 
 const covidUrl = "https://corona.lmao.ninja/v2/countries/vn";
@@ -82,19 +79,24 @@ export const getCovidData = async () => {
     // countryInfo,
   } = data;
 
-  const string = `============== COVID 19 ==============\nQuốc gia: ${country}
-  Khu vực: ${continent}
-  Dân số: ${population}
-  Số ca nhiễm: ${cases}
-  Số ca nhiễm trong ngày hôm nay: ${todayCases}
-  Số ca tử vong: ${deaths}
-  Số ca tử vong ngày hôm nay: ${todayDeaths}
-  Số ca đã phục hồi: ${recovered}
-  Số ca đã phục hồi trong ngày hôm nay: ${todayRecovered}
-  Số ca chưa xác định: ${undefine}
-  Dữ liệu được cập nhật lúc: ${moment(updated)
-    .locale("vi")
-    .format("HH:mm:ss, DD/MM/YYYY")}`;
+  const arr = [
+    "```=================== COVID 19 ===================",
+    "\n",
+    `Quốc gia: ${country}`,
+    `Khu vực: ${continent}`,
+    `Dân số: ${population}`,
+    `Số ca nhiễm: ${cases}`,
+    `Số ca nhiễm trong ngày hôm nay: ${todayCases}`,
+    `Số ca tử vong: ${deaths}`,
+    `Số ca tử vong ngày hôm nay: ${todayDeaths}`,
+    `Số ca đã phục hồi: ${recovered}`,
+    `Số ca đã phục hồi trong ngày hôm nay: ${todayRecovered}`,
+    `Số ca chưa xác định: ${undefine}`,
+    `Dữ liệu được cập nhật lúc: ${moment(updated)
+      .locale("vi")
+      .format("HH:mm:ss, DD/MM/YYYY")}`,
+    "```",
+  ];
 
-  return "```" + string + "```";
+  return arr.join("\n");
 };
