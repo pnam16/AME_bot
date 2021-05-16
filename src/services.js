@@ -35,9 +35,6 @@ export const processCommand = (receivedMessage) => {
   case "covid":
     Covid(receivedMessage);
     break;
-  case "1":
-    Covid(receivedMessage);
-    break;
   default:
     receivedMessage.channel.send("Bot không hỉu, bot không hỉu, bot không hỉu");
     break;
